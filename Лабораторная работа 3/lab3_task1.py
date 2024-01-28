@@ -1,6 +1,7 @@
 def goods(goods_list, goods_find):
-    if goods_find in goods_list:
-        return goods_list.index(goods_find)
+    for i in range(len(goods_list)):
+        if goods_list[i] == goods_find:
+            return i
 
 
 items_list = ['яблоко', 'банан', 'апельсин', 'груша', 'киви', 'банан']
