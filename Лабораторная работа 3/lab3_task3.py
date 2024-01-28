@@ -8,7 +8,6 @@ def count_letters(text):
 
 
 def calculate_frequency(dictionary):
-    total = 0
     new_dict = {}
     for key, value in dictionary.items():
         new_dict[key] = value / sum(dictionary.values())
