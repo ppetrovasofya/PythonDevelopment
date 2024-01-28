@@ -1,20 +1,17 @@
 def count_letters(text):
     dictionary = {}
     text = text.lower()
-    for word in text:
-        for ch in word:
-            if ch.isalpha():
-                dictionary[ch] = text.count(ch)
+    for ch in text:
+        if ch.isalpha():
+            dictionary[ch] = dictionary.get(ch, 0) + 1
     return dictionary
 
 
 def calculate_frequency(dictionary):
     total = 0
     new_dict = {}
-    for i in dictionary.values():
-        total += i
     for key, value in dictionary.items():
-        new_dict[key] = value / total
+        new_dict[key] = value / sum(dictionary.values())
     return new_dict
 
 
