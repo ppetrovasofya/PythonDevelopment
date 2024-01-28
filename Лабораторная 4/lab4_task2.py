@@ -10,8 +10,7 @@ def task() -> None:
 
     with open(INPUT_FILENAME, encoding="utf-8") as i:
         reader = csv.DictReader(i)
-        for row in reader:
-            new_data.append(row)
+        [new_data.append(row) for row in reader]
 
     with open(OUTPUT_FILENAME, 'w') as o:
         json.dump(new_data, o, indent=4)
