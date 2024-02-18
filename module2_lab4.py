@@ -80,12 +80,6 @@ class Truck(Car):
             raise ValueError("Максимальный вес не может быть меньше нуля")
         self.max_weight = max_weight
 
-    def __str__(self):
-        return f"{super().__str__()} и имеет максимальную вместимость {self.max_weight}"
-
-    def __repr__(self):
-        return f"{self.__class__.__name__}(mark={self.mark!r}, country={self.country!r}, max_weight={self.max_weight!r})"
-
     def overweight(self, current_weight: float):
         """"
         Метод, который вычисляет, будет ли перегруз или нет
@@ -100,6 +94,12 @@ class Truck(Car):
             raise ValueError("Максимальный вес не может быть меньше нуля")
         if current_weight > self.max_weight:
             raise ValueError("Перегруз")
+
+    def __str__(self):
+        return f"{super().__str__()} и имеет максимальную вместимость {self.max_weight}"
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}(mark={self.mark!r}, country={self.country!r}, max_weight={self.max_weight!r})"
 
 
 if __name__ == "__main__":
